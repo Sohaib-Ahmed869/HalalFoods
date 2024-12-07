@@ -7,12 +7,17 @@ import { MdPayments } from "react-icons/md";
 import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { IoHelpCircleSharp } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
+import { BiGlobe } from "react-icons/bi";
 
 const Sidebar = ({ isOpen, toggle, activeOption, setActiveOption }) => {
   useEffect(() => {
     console.log("Sidebar rendered", isOpen);
   }, [isOpen]);
   const [options] = useState([
+    {
+      name: "Overview",
+      icon: <BiGlobe />,
+    },
     {
       name: "Dashboard",
       icon: <MdDashboard />,
@@ -26,15 +31,15 @@ const Sidebar = ({ isOpen, toggle, activeOption, setActiveOption }) => {
       icon: <FaPeopleGroup />,
     },
     {
-      name: "Orders",
+      name: "Sales by Tags",
       icon: <FaShoppingCart />,
     },
     {
-      name: "Invoices",
+      name: "Purchase by Tags",
       icon: <LiaFileInvoiceSolid />,
     },
     {
-      name: "Payments",
+      name: "Invoices",
       icon: <MdPayments />,
     },
     {

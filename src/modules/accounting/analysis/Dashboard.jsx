@@ -3,8 +3,8 @@ import Options from "./components/options";
 import BeginAnalysis from "./components/beginAnalysis";
 import DashboardMain from "./components/dashboardMain";
 import DataRetrieval from "./components/DataRetrieval";
-import DiscrepanciesList from "./components/discrepenciesStep";
-
+import PostAnalysis from "./components/postAnalysis";
+import AnalyticsDashboard from "./components/dashboardCreated";
 const Dashboard = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
@@ -39,9 +39,13 @@ const Dashboard = () => {
         />
       )}
       {activeStep === 4 && (
-        <DiscrepanciesList setStep={setActiveStep} step={activeStep} />
+        <PostAnalysis setStep={setActiveStep} step={activeStep} />
       )}
       {activeStep === 5 && (
+        <AnalyticsDashboard setStep={setActiveStep} step={activeStep} />
+      )}
+
+      {activeStep === 6 && (
         <DashboardMain
           start={start}
           setStart={setStart}
